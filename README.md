@@ -43,6 +43,6 @@ http://localhost:8080/vad_timestamp?url=http://example.com/test.wav
 http://localhost:8080/vad_timestamp
 ```
 
-| Body | Type | Description  |
-| ---- | ---- | ------------ |
-| JSON | byte | Audio Binary |
+| Body | Type  | Description  |
+| ---- | ----- | ------------ |
+| JSON | bytes | Audio Binary |
