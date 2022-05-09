@@ -27,6 +27,8 @@ python ./src/server.py
 
 > request vad timestamp from wav file url
 
+Request
+
 ```text
 http://localhost:8080/vad_timestamp?url=http://example.com/test.wav
 ```
@@ -35,9 +37,26 @@ http://localhost:8080/vad_timestamp?url=http://example.com/test.wav
 | ----- | ------ | ------------ |
 | url   | string | Wav file URL |
 
+Response
+
+```JSON
+[
+  {
+    "start": 1.9,
+    "end": 3.4
+  }
+]
+```
+
+| Response | Type      | Description                      |
+| -------- | --------- | -------------------------------- |
+| body     | JSONArray | timestamp list of voice activity |
+
 ### POST ```/vad_timestamp```
 
 > request vad timestamp from wav file
+
+Request
 
 ```text
 http://localhost:8080/vad_timestamp
@@ -45,4 +64,19 @@ http://localhost:8080/vad_timestamp
 
 | Body | Type  | Description  |
 | ---- | ----- | ------------ |
-| JSON | bytes | Audio Binary |
+| data | bytes | Audio Binary |
+
+Response
+
+```JSON
+[
+  {
+    "start": 1.9,
+    "end": 3.4
+  }
+]
+```
+
+| Response | Type      | Description                      |
+| -------- | --------- | -------------------------------- |
+| body     | JSONArray | timestamp list of voice activity |
