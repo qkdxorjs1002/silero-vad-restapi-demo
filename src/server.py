@@ -29,7 +29,7 @@ app = Flask(__name__)
 @app.route('/vad_timestamp', methods=['GET'])
 def getVadTimestamp():
     if request.method == 'GET':
-        filename = makeUuid()
+        filename = makeUuid() + ".wav"
         url = request.args.get("url")
         torch.hub.download_url_to_file(url, "./" + filename)
         result = json.dumps(vadTimestamp(filename))
@@ -40,7 +40,7 @@ def getVadTimestamp():
 @app.route('/vad_timestamp', methods=['POST'])
 def postVadTimestamp():
     if request.method == 'POST':
-        filename = makeUuid()
+        filename = makeUuid() + ".wav"
         with open("./" + filename, "wb") as file:
             file.write(request.data)
         result = json.dumps(vadTimestamp(filename))
