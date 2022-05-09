@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "bd4f34aa-7422-4832-9ea9-d4da67ad2acc",
+		"name": "VAD_DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "VAD_TIMESTAMP_FROM_URL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vad_timestamp?url=file:///Users/paragonnov/Downloads/A0216-0135F1112-10200000-01660370.wav",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vad_timestamp"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "file:///Users/paragonnov/Downloads/A0216-0135F1112-10200000-01660370.wav",
+							"description": "WAV 파일 링크"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VAD_TIMESTAMP_FROM_FILE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/Users/paragonnov/Downloads/A0096-0066F1112-10200000-00196829.wav"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vad_timestamp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vad_timestamp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
