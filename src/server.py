@@ -31,7 +31,6 @@ def getVadTimestamp():
     if request.method == 'GET':
         filename = makeUuid()
         url = request.args.get("url")
-        request.query_string
         torch.hub.download_url_to_file(url, "./" + filename)
         result = json.dumps(vadTimestamp(filename))
 
